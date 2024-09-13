@@ -15,5 +15,6 @@ for name in "${DOCKER_IMAGES[@]}"; do
     asset="${name}"
     docker pull "$FROM_PREFIX/$asset"
     docker tag $FROM_PREFIX/$asset $TO_PERFIX/$asset 
-    docker push $TO_PERFIX/$asset  
+    to_asset=$(echo "$asset" | sed 's/\//--/g')
+    docker push $TO_PERFIX/$to_asset  
 done

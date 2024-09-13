@@ -32,6 +32,6 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Push image
         run: |
-          FROM_PREFIX=us-docker.pkg.dev/spinnaker-community/docker
+          FROM_PREFIX=docker.io
           TO_PERFIX=docker.pkg.github.com/${{ github.repository }}
           bash sync.sh $FROM_PREFIX $TO_PERFIX
